@@ -1,7 +1,6 @@
 package kata
 
 import kata.kotlin.dsl.Bluesky
-import kata.kotlin.dsl.Client
 import kata.kotlin.dsl.Company
 import java.time.LocalDate
 import java.time.Month
@@ -12,19 +11,15 @@ fun main() {
     val client = createClient {
         it.firstName = "Jean"
         it.lastName = "DUPOND"
-    }
-    /*val client = Client(
-        "Jean",
-        "DUPOND",
-        Company(
+        it.company = Company(
             "Company",
             "Town"
-        ),
-        Bluesky(
+        )
+        it.bluesky = Bluesky(
             "@jeandupond.bsky.social"
-        ),
-        LocalDate.of(2002, Month.MARCH, 20)
-    )
-*/
+        )
+        it.dateOfBirth = LocalDate.of(2002, Month.MARCH, 20)
+    }
+
     println("Created client is : ${client.print}")
 }
