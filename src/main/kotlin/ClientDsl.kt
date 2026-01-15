@@ -25,10 +25,26 @@ class ClientBuilder {
         bluesky = BlueskyBuilder().apply(block).build()
     }
 
+    fun company(block: CompanyBuilder.() -> Unit) {
+        company = CompanyBuilder().apply(block).builc()
+    }
+
+
     fun build() = Client(firstName, lastName, company, bluesky, dateOfBirth)
 }
 
 class BlueskyBuilder {
     var handler: String? = null
     fun build() = Bluesky(handler)
+}
+
+class CompanyBuilder {
+    var name: String? = null
+
+    var city: String? = null
+
+    fun builc(): Company {
+        return Company(name, city)
+    }
+
 }
