@@ -1,6 +1,5 @@
 package kata
 
-import kata.kotlin.dsl.Bluesky
 import kata.kotlin.dsl.Company
 import java.time.LocalDate
 import java.time.Month
@@ -15,9 +14,9 @@ fun main() {
             "Company",
             "Town"
         )
-       bluesky = Bluesky(
-            "@jeandupond.bsky.social"
-        )
+        bluesky {
+            handler = "@jeandupond.bsky.social"
+        }
        dateOfBirth = LocalDate.of(2002, Month.MARCH, 20)
     }
 

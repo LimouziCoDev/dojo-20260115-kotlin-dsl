@@ -6,7 +6,7 @@ import kata.kotlin.dsl.Company
 import java.time.LocalDate
 
 val Client.print: String
-    get() =  "${bluesky()?.handle()} ${company()?.name()}"
+    get() =  "${bluesky()?.handler()} ${company()?.name()}"
 
 fun createClient(consumer: ClientBuilder.() -> Unit): Client {
     val clientBuilder = ClientBuilder()
@@ -17,9 +17,18 @@ fun createClient(consumer: ClientBuilder.() -> Unit): Client {
 class ClientBuilder {
     var firstName: String? = null
     var lastName: String? = null
-    var bluesky: Bluesky? = null
+    private var bluesky: Bluesky? = null
     var company: Company? = null
     var dateOfBirth: LocalDate? = null
 
+    fun bluesky(block: BlueskyBuilder.() -> Unit) {
+        bluesky = BlueskyBuilder().apply(block).build()
+    }
+
     fun build() = Client(firstName, lastName, company, bluesky, dateOfBirth)
+}
+
+class BlueskyBuilder {
+    var handler: String? = null
+    fun build() = Bluesky(handler)
 }

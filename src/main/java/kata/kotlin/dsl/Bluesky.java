@@ -1,4 +1,4 @@
 package kata.kotlin.dsl;
 
-public record Bluesky(String handle) {
+public record Bluesky(String handler) {
 }
