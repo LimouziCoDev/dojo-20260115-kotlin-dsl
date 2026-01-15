@@ -1,4 +1,4 @@
-# Dojo kotlin-dsl
+# Dojo kotlin dsl
 
 2026-01-15
 
