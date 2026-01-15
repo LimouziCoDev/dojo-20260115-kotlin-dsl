@@ -4,9 +4,12 @@ import kata.kotlin.dsl.Bluesky
 import kata.kotlin.dsl.Client
 import kata.kotlin.dsl.Company
 import java.time.LocalDate
+import java.time.Month
 
 val Client.print: String
     get() =  "${bluesky()?.handler()} ${company()?.name()}"
+
+infix fun Int.March(n: Int): LocalDate = LocalDate.of(this, Month.MARCH, n)
 
 fun createClient(consumer: ClientBuilder.() -> Unit): Client {
     val clientBuilder = ClientBuilder()
