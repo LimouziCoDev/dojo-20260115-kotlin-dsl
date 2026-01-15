@@ -9,16 +9,16 @@ import java.time.Month
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     val client = createClient {
-        it.firstName = "Jean"
-        it.lastName = "DUPOND"
-        it.company = Company(
+       firstName = "Jean"
+       lastName = "DUPOND"
+       company = Company(
             "Company",
             "Town"
         )
-        it.bluesky = Bluesky(
+       bluesky = Bluesky(
             "@jeandupond.bsky.social"
         )
-        it.dateOfBirth = LocalDate.of(2002, Month.MARCH, 20)
+       dateOfBirth = LocalDate.of(2002, Month.MARCH, 20)
     }
 
     println("Created client is : ${client.print}")
