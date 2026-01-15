@@ -22,5 +22,5 @@ fun main() {
         LocalDate.of(2002, Month.MARCH, 20)
     )
 
-    println("Created client is : $client")
+    println("Created client is : ${client.print()}")
 }
